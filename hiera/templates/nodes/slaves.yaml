@@ -1,0 +1,3 @@
+---
+classes:
+- scenario::mesos::slave
