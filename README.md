@@ -7,16 +7,24 @@ of Openstack to the rake task ```scenario:main``` we just use this task to insta
 Mesos.
 
 In conclusion it proves that ```xp5k-openstack``` can be used as a standard way
-of deploying Puppetize environments in Grid'5000.
+of deploying Puppetized environments in Grid'5000.
 
 
-# scenario : Mesos
+# Installation
+
+```
+git clone https://github.com/grid5000/xp5k-openstack
+cd xp5k-openstack/scenarios
+git clone https://github.com/msimonin/xp5k-mesos.git
+```
+
+# Scenario : Mesos
 
 Deploy a Mesos/HDFS cluster on Grid'5000.
 
 Inspired by http://mesosphere.com/docs/getting-started/datacenter/install/
 
-Keywords : Grid'5000, puppet, capistrano, hiera, xp5k
+Keywords : Grid'5000, puppet, rake, hiera, xp5k
 
 ## Optionnal ```xp.conf``` parameters
 
@@ -27,3 +35,9 @@ default values will bet set for them (see ```tasks/scenario.rb```). Here is an e
 masters: 1 # number of mesos-master instances to run each will run on a dedicated node
 slaves: 3  # number of mesos-slave instances to run each will run on a dedicated node
 ```
+
+# Future
+
+- [ ] Support docker isolation
+- [ ] Marathon installation
+- [ ] Aurora installation
