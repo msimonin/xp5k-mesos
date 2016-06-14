@@ -1,4 +1,4 @@
-class scenario::mesos::slave{
+class scenario::profile::slave{
 
   include scenario::mesos
   # configure master

@@ -39,5 +39,5 @@ slaves: 3  # number of mesos-slave instances to run each will run on a dedicated
 # Future
 
 - [ ] Support docker isolation
-- [ ] Marathon installation
+- [x] Marathon installation
 - [ ] Aurora installation

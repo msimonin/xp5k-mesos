@@ -1,6 +1,5 @@
-class scenario::mesos::master {
+class scenario::profile::master inherits scenario::profile {
 
-  include scenario::mesos
   # configure master
 
   #

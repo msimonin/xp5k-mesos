@@ -84,7 +84,7 @@ namespace :scenario do
       common['hadoop::dfs::namenode'] = masters.first
       common['hadoop::dfs::datanodes'] = slaves
       # hard coded for now
-      common['hadoop::dfs::replication'] = slaves
+      common['hadoop::dfs::replication'] = 1
       common['hadoop::url'] =  "http://www.eu.apache.org/dist/hadoop/common/hadoop-1.2.1/hadoop-1.2.1.tar.gz"
 
       File.open(file, 'w') do |file|
