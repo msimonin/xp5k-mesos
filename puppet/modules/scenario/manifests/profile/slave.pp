@@ -1,6 +1,5 @@
-class scenario::profile::slave{
+class scenario::profile::slave inherits scenario::profile {
 
-  include scenario::mesos
   # configure master
 
   #
@@ -8,16 +7,22 @@ class scenario::profile::slave{
   #
   $zhosts = hiera("mesos::masters")
 
-  package{ 'zookeeperd':
+  package { 'zookeeperd':
     ensure => absent
   }
-
-  service{ 'mesos-slave':
+  
+  service { 'mesos-slave':
     ensure  => running,
     require => [Package['mesos'], File['/etc/mesos/zk']]
   }
+  
+  file { '/etc/mesos-slave/containerizers':
+    content => 'docker,mesos',
+    require => Package['mesos'],
+    notify  => Service['mesos-slave']
+  }
 
-  service{ 'mesos-master':
+  service { 'mesos-master':
     ensure  => stopped,
   }
 
